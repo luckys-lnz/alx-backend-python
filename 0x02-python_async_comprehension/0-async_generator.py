@@ -1,13 +1,12 @@
-#!#!/usr/bin/env python3
+#!/usr/bin/env python3
 """async_generator that takes no arguments"""
-
 
 import asyncio
 import random
-from typing import Generator
+from typing import AsyncGenerator
 
 
-async def async_generator():
+async def async_generator() -> AsyncGenerator[float, None]:
     """
     Asynchronously generate random numbers.
 
@@ -18,7 +17,6 @@ async def async_generator():
     Yields:
         float: A random float between 0 and 10.
     """
-
     for _ in range(10):
         await asyncio.sleep(1)
         yield random.random() * 10
